@@ -28,10 +28,13 @@ export default function Home() {
     setLoading(true);
     setError(null);
     try {
-      const res = await axios.post("http://localhost:3000/api/user/auth", {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://testt-delta-lyart.vercel.app//api/user/auth",
+        {
+          email,
+          password,
+        }
+      );
       setUserData(res.data);
       setIsLoggedIn(true);
       console.log(res.data.name);
@@ -49,7 +52,7 @@ export default function Home() {
       setLoading(true);
       setError(null);
       try {
-        await axios.delete("http://localhost:3000/api/delete", {
+        await axios.delete("https://testt-delta-lyart.vercel.app//api/delete", {
           data: { id: userData._id },
         });
         console.log("User deleted successfully");
